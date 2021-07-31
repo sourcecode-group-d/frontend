@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import MeatDecorator from '../../utilities/MeatDecorator/MeatDecorator';
 import axios from 'axios';
-import UserData from '../../components/UserData/UserData'
+import LandingPage from '../../components/LandingPage/Index'
 
 export class HomePage extends Component {
 
@@ -41,18 +41,7 @@ export class HomePage extends Component {
           title={`sourcecode`}
           description={`sourcecode description Home Page`}
         />
-        {this.state.userData &&
-          <>
-            <div>
-              <h2>userData</h2>
-              <div>
-                <UserData
-                  userData={this.state.userData}
-                />
-              </div>
-            </div>
-          </>
-        }
+        <LandingPage/>
       </Fragment>
     )
   }
