@@ -43,9 +43,9 @@ const useStyles = makeStyles((theme) => ({
     color: '#a37ef9',
     fontSize: '4rem',
   },
-  headerLogo:{
+  headerLogo: {
     width: '16vw'
-}
+  }
 }));
 export default function Header() {
   const classes = useStyles();
@@ -59,7 +59,7 @@ export default function Header() {
         <Toolbar className={classes.appbarWrapper}>
           <h1 className={classes.appbarTitle}>
             <div>
-              <img className={classes.headerLogo} src={Logo} alt={"logo"}/>
+              <img className={classes.headerLogo} src={Logo} alt={"logo"} />
             </div>
           </h1>
           <IconButton>
@@ -83,8 +83,10 @@ export default function Header() {
               <ExpandMoreIcon className={classes.goDown} />
             </IconButton>
           </Scroll>
+
         </div>
       </Collapse>
+
     </div>
   );
 }
