@@ -9,8 +9,8 @@ import { Collapse } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    width: '30rem',
-    background: 'rgba(0,0,0,0.5)',
+    width: '25em',
+    background: 'rgb(103 103 103)',
     margin: '20px',
   },
   media: {
@@ -29,19 +29,19 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ImageCard({ place, checked }) {
+export default function ImageCard({ service, checked }) {
   const classes = useStyles();
 
   return (
     <Fragment>
-      
+
       <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}>
 
         <Card className={classes.root}>
           <CardMedia
             className={classes.media}
-            image={place.imageUrl}
-            title="Contemplative Reptile"
+            image={service.imageUrl}
+            title={service.title}
           />
           <CardContent>
             <Typography
@@ -50,7 +50,7 @@ export default function ImageCard({ place, checked }) {
               component="h1"
               className={classes.title}
             >
-              {place.title}
+              {service.title}
             </Typography>
             <Typography
               variant="body2"
@@ -58,7 +58,7 @@ export default function ImageCard({ place, checked }) {
               component="p"
               className={classes.desc}
             >
-              {place.description}
+              {service.description}
             </Typography>
           </CardContent>
         </Card>

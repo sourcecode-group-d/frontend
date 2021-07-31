@@ -2,11 +2,8 @@ import React, { Component, Fragment } from 'react';
 import HomePage from './views/HomePage/HomePage';
 import LogIn from "./views/LogIn";
 import SignUp from "./views/SignUp"
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
-import LandingPage from "./views/Landing";
-// import LandingPage from "./views/Landing";
-import HTest  from './components/LandingPage/HTest';
-import Footer from './components/LandingPage/Footer';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import Footer from './utilities/Footer';
 
 
 export class App extends Component {
@@ -14,7 +11,6 @@ export class App extends Component {
     return (
       <Fragment>
         <Router>
-          <HTest />
           <Switch>
             <Route exact path={"/"} component={HomePage} />
             <Route exact path={"/login"} component={LogIn} />
@@ -22,9 +18,9 @@ export class App extends Component {
             {/*<Route path={"/profile"} component={Profile}/>*/}
             {/*<Route path={"/*"} component={PageNotFound}/>*/}
           </Switch>
-    
+
         </Router>
-        <Footer/>
+        <Footer />
       </Fragment>
       // <LogIn/>
     )

@@ -16,14 +16,11 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Nunito',
   },
   appbar: {
-    background: 'none',
+    background: '#222222',
   },
   appbarWrapper: {
     width: '80%',
     margin: '0 auto',
-  },
-  appbarTitle: {
-    flexGrow: '1',
   },
   icon: {
     color: '#fff',
@@ -43,8 +40,11 @@ const useStyles = makeStyles((theme) => ({
     color: '#a37ef9',
     fontSize: '4rem',
   },
+  logo: {
+    flexGrow: '1',
+  },
   headerLogo: {
-    width: '16vw'
+    width: '12rem',
   }
 }));
 export default function Header() {
@@ -57,11 +57,9 @@ export default function Header() {
     <div className={classes.root} id="header">
       <AppBar className={classes.appbar} elevation={0}>
         <Toolbar className={classes.appbarWrapper}>
-          <h1 className={classes.appbarTitle}>
-            <div>
-              <img className={classes.headerLogo} src={Logo} alt={"logo"} />
-            </div>
-          </h1>
+          <div className={classes.logo}>
+            <img className={classes.headerLogo} src={Logo} alt={"logo"} />
+          </div>
           <IconButton>
             <SortIcon className={classes.icon} />
           </IconButton>
@@ -78,7 +76,7 @@ export default function Header() {
             Welcome to <br />
             S<span className={classes.colorText}>ourceCode</span>
           </h1>
-          <Scroll to="place-to-visit" smooth={true}>
+          <Scroll to="our-services" smooth={true}>
             <IconButton>
               <ExpandMoreIcon className={classes.goDown} />
             </IconButton>

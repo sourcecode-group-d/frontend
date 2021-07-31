@@ -4,7 +4,7 @@ import { CssBaseline } from '@material-ui/core';
 import Header from './Header';
 import OurServices from './OurServices';
 import Banner from '../../assets/img/banner.jpg';
-import HTest from './HTest';
+// import HTest from './HTest';
 
 const useStyles = makeStyles((theme) => ({
   root: {

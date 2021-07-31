@@ -41,7 +41,7 @@ const useStyles = makeStyles({
 
 });
 
-export default function SimpleBottomNavigation() {
+const Footer = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -65,13 +65,13 @@ export default function SimpleBottomNavigation() {
           <BottomNavigationAction style={{ color: "white" }} label="h " icon={<LocationOnIcon />} />
         </div>
         <div className={classes.copyRight}>
-         &copy; by SourceCode
+          &copy; CopyRight by SourceCode | 2021
         </div>
       </BottomNavigation>
 
     </Fragment>
 
-
-
   );
 }
+
+export default Footer;

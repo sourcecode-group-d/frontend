@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    flexWrap: 'wrap',
     [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
     },
@@ -34,11 +35,14 @@ const OurServices = () => {
   return (
     <Fragment>
 
-      <h1 className={classes.serviceTitle}>  Our Services  </h1>
-      <div className={classes.root} id="place-to-visit">
-
-        <ImageCard place={service[1]} checked={checked} />
-        <ImageCard place={service[0]} checked={checked} />
+      <h1 className={classes.serviceTitle}>Our Services</h1>
+      <div className={classes.root} id="our-services">
+        <ImageCard service={service[0]} checked={checked} />
+        <ImageCard service={service[1]} checked={checked} />
+        <ImageCard service={service[2]} checked={checked} />
+        <ImageCard service={service[3]} checked={checked} />
+        <ImageCard service={service[4]} checked={checked} />
+        <ImageCard service={service[5]} checked={checked} />
       </div>
     </Fragment>
   );
