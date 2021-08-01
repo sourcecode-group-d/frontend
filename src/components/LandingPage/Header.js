@@ -4,6 +4,7 @@ import { AppBar, IconButton, Toolbar, Collapse } from '@material-ui/core';
 import SortIcon from '@material-ui/icons/Sort';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link as Scroll } from 'react-scroll';
+import Navbar from '../Navbar/NavbarLandingPage'
 import Logo from '../../assets/img/logo.png'
 
 
@@ -14,20 +15,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     height: '100vh',
     fontFamily: 'Nunito',
-  },
-  appbar: {
-    background: 'none',
-  },
-  appbarWrapper: {
-    width: '80%',
-    margin: '0 auto',
-  },
-  appbarTitle: {
-    flexGrow: '1',
-  },
-  icon: {
-    color: '#fff',
-    fontSize: '2rem',
   },
   colorText: {
     color: '#a37ef9',
@@ -43,9 +30,6 @@ const useStyles = makeStyles((theme) => ({
     color: '#a37ef9',
     fontSize: '4rem',
   },
-  headerLogo:{
-    width: '16vw'
-}
 }));
 export default function Header() {
   const classes = useStyles();
@@ -55,18 +39,7 @@ export default function Header() {
   }, []);
   return (
     <div className={classes.root} id="header">
-      <AppBar className={classes.appbar} elevation={0}>
-        <Toolbar className={classes.appbarWrapper}>
-          <h1 className={classes.appbarTitle}>
-            <div>
-              <img className={classes.headerLogo} src={Logo} alt={"logo"}/>
-            </div>
-          </h1>
-          <IconButton>
-            <SortIcon className={classes.icon} />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
+      <Navbar />
 
       <Collapse
         in={checked}
@@ -78,13 +51,15 @@ export default function Header() {
             Welcome to <br />
             S<span className={classes.colorText}>ourceCode</span>
           </h1>
-          <Scroll to="place-to-visit" smooth={true}>
+          <Scroll to="our-services" smooth={true}>
             <IconButton>
               <ExpandMoreIcon className={classes.goDown} />
             </IconButton>
           </Scroll>
+
         </div>
       </Collapse>
+
     </div>
   );
 }

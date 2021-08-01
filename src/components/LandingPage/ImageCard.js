@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 
@@ -9,8 +9,8 @@ import { Collapse } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    width: '30rem',
-    background: 'rgba(0,0,0,0.5)',
+    width: '25em',
+    background: 'rgb(103 103 103)',
     margin: '20px',
   },
   media: {
@@ -29,36 +29,41 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ImageCard({ place, checked }) {
+export default function ImageCard({ service, checked }) {
   const classes = useStyles();
 
   return (
-    <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}>
-      <Card className={classes.root}>
-        <CardMedia
-          className={classes.media}
-          image={place.imageUrl}
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="h1"
-            className={classes.title}
-          >
-            {place.title}
-          </Typography>
-          <Typography
-            variant="body2"
-            color="textSecondary"
-            component="p"
-            className={classes.desc}
-          >
-            {place.description}
-          </Typography>
-        </CardContent>
-      </Card>
-    </Collapse>
+    <Fragment>
+
+      <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}>
+
+        <Card className={classes.root}>
+          <CardMedia
+            className={classes.media}
+            image={service.imageUrl}
+            title={service.title}
+          />
+          <CardContent>
+            <Typography
+              gutterBottom
+              variant="h5"
+              component="h1"
+              className={classes.title}
+            >
+              {service.title}
+            </Typography>
+            <Typography
+              variant="body2"
+              color="textSecondary"
+              component="p"
+              className={classes.desc}
+            >
+              {service.description}
+            </Typography>
+          </CardContent>
+        </Card>
+      </Collapse>
+    </Fragment>
+
   );
 }
