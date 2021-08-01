@@ -22,7 +22,7 @@ export class HomePage extends Component {
   }
 
   getUser = () => {
-    axios.get("http://localhost:8080/api/v1/").then(
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/profile`).then(
       (request) => {
         console.log(request);
 
