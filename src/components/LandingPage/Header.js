@@ -4,6 +4,7 @@ import { AppBar, IconButton, Toolbar, Collapse } from '@material-ui/core';
 import SortIcon from '@material-ui/icons/Sort';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link as Scroll } from 'react-scroll';
+import Navbar from '../Navbar/NavbarLandingPage'
 import Logo from '../../assets/img/logo.png'
 
 
@@ -14,17 +15,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     height: '100vh',
     fontFamily: 'Nunito',
-  },
-  appbar: {
-    background: '#222222',
-  },
-  appbarWrapper: {
-    width: '80%',
-    margin: '0 auto',
-  },
-  icon: {
-    color: '#fff',
-    fontSize: '2rem',
   },
   colorText: {
     color: '#a37ef9',
@@ -40,12 +30,6 @@ const useStyles = makeStyles((theme) => ({
     color: '#a37ef9',
     fontSize: '4rem',
   },
-  logo: {
-    flexGrow: '1',
-  },
-  headerLogo: {
-    width: '12rem',
-  }
 }));
 export default function Header() {
   const classes = useStyles();
@@ -55,16 +39,7 @@ export default function Header() {
   }, []);
   return (
     <div className={classes.root} id="header">
-      <AppBar className={classes.appbar} elevation={0}>
-        <Toolbar className={classes.appbarWrapper}>
-          <div className={classes.logo}>
-            <img className={classes.headerLogo} src={Logo} alt={"logo"} />
-          </div>
-          <IconButton>
-            <SortIcon className={classes.icon} />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
+      <Navbar />
 
       <Collapse
         in={checked}

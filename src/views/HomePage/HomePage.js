@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import MeatDecorator from '../../utilities/MeatDecorator/MeatDecorator';
 import axios from 'axios';
 import LandingPage from '../../components/LandingPage/Index'
+import Footer from '../../utilities/Footer';
 
 export class HomePage extends Component {
 
@@ -41,7 +42,8 @@ export class HomePage extends Component {
           title={`sourcecode`}
           description={`sourcecode description Home Page`}
         />
-        <LandingPage/>
+        <LandingPage />
+        <Footer />
       </Fragment>
     )
   }
