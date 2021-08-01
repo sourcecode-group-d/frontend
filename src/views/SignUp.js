@@ -107,6 +107,17 @@ export default function LogIn() {
                             shrink: true,
                         }}
                     />
+                    <TextField
+                        variant="outlined"
+                        margin="normal"
+                        required
+                        fullWidth
+                        id="bio"
+                        label="Biography"
+                        name="bio"
+                        autoComplete="bio"
+                        autoFocus
+                    />
                     <Button
                         type="submit"
                         fullWidth
